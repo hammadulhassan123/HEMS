@@ -1,5 +1,6 @@
 .navbar-custom{
     box-shadow: 0px 1px 1px 2px #28a745;
+    
 }
 
 .nav-brand{
@@ -15,6 +16,8 @@
     font-size: 15px;
     text-transform: uppercase;
     font-weight: 500;
+    text-decoration: none;
+    color: #444343;
 }
 .navbar-custom .anchor:focus,.navbar-custom .anchor:hover{
     color: #4aab3d;

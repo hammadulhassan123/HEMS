@@ -4,6 +4,7 @@ import Video from './Video';
 import AboutSection from './aboutH';
 import ServHome from './servHome';
 import TeamHome from './TeamHome';
+import Faq from './Faq';
 
 function Home() {
        return (
@@ -12,6 +13,7 @@ function Home() {
             <AboutSection />
             <ServHome/>
             <TeamHome/>
+            <Faq/>
          </>
        );
 }

@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react'
 import { Container,Row,Col,Card,Button } from 'react-bootstrap'
 import "./styles/home.css"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTeamspeak } from '@fortawesome/free-brands-svg-icons';
+import { faPeopleGroup } from '@fortawesome/free-solid-svg-icons';
 
 export default function TeamHome() {
 
@@ -20,10 +23,10 @@ export default function TeamHome() {
     <>
         <section>
             <Container>
-                <Row className='team-head'>
-                    <Col md={12} className='text-center'>
-                        <h2>Our Team</h2>
-                        <p >Our remarkable and hardworking team</p>
+                <Row className='team-head mt-5 mb-3'>
+                    <Col md={12} className='text-center text-dark' >
+                        <mark className='teamHead'>Our Team <FontAwesomeIcon icon={faPeopleGroup} color='black'/></mark>
+                        {/* <p><i>Our remarkable and hardworking team</i></p> */}
                     </Col>
                 </Row>
 

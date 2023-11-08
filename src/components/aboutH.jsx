@@ -13,10 +13,10 @@ const AboutSection = () => {
           </Col>
           <Col lg={9} md={12} className="col-12 ps-lg-5 mt-md-5">
             <div className="about-text">
-              <h2>
-                We are Providing <br /> Innovative Solution
+              <h2 className="about-head text-light p-3 text-center">
+                We are Providing Innovative Solution
               </h2>
-              <p>
+              <p className="mt-5">
                 Energy management is an important problem being faced in many
                 households today. Energy is being utilized at peak times, which
                 costs more than it should. Also, nowadays renewable energy
@@ -34,9 +34,9 @@ const AboutSection = () => {
                 have full control over how energy is being utilized in the
                 household.
               </p>
-              <Button variant="outline-success" className="ps-5 pe-5 pt-2 pb-2">
+              {/* <Button variant="success" className="abtBtn ps-5 pe-5 pt-2 pb-2">
                 Learn More
-              </Button>
+              </Button> */}
             </div>
           </Col>
         </Row>
