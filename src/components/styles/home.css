@@ -1,0 +1,128 @@
+*{
+    box-sizing: border-box;
+}
+/* Define a CSS variable for the background color */
+:root {
+    --main-green: #4aab3d; /* Default background color */
+  }
+.main {
+    width: 100%;
+    height: 100vh;
+    box-shadow: 0px 1px 3px 2px #20f4675d
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+.content Button{
+    border-radius: 40px;
+    background-color: transparent;   
+    border-color: var(--main-green);
+    color: #4aab3d;
+}
+
+.card-icon{
+    color: rgba(15, 15, 15, 0.736);
+    margin-bottom: 15px;
+
+}
+.servhome{
+    margin: 2vh 0vw;
+    color: black;
+    border-color: 1px solid #20f4675d;
+    border-radius: 4rem;
+    background-color: whitesmoke;
+    box-shadow: 1px 1px 2px 2px slategray;
+    transition: background-color 0.3s ease-in;
+}
+
+.servhome:hover{
+    color: whitesmoke;
+    background-color: rgba(0,0,0, 0.3);
+}
+
+.servBtn{
+    background-color: var(--main-green);
+    color: black;
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    border-radius: 3rem;
+    transition-property: color;
+    transition-duration: 0.3s;
+}
+
+.servBtn:hover{
+    background-color: #000;
+}
+
+.team-head{
+    background-color: #4aab3d;
+    color: aliceblue;
+    margin: 2vh 5vw;
+    border-radius:2px 3rem ;
+    padding: 1vh 0vw;
+}
+
+.teamcard{
+    height: 400px;
+    width: auto;
+    box-shadow: 0px 1px 2px 2px rgb(122, 130, 138);
+    border: 2px solid lightgray;
+    overflow: hidden;
+    position: relative;
+    margin: 2vh 0px;
+}
+
+.teamBody{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: -100%;
+    position: absolute;
+    background-color: #1f3d4738;
+    backdrop-filter: blur(5px);
+    color: white;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 2s ease-in-out;
+}
+
+.teamcard:hover .teamBody {
+    right: 0;
+}
+
+
+.teamImg{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+  
+ 

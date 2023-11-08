@@ -1,0 +1,22 @@
+.navbar-custom{
+    box-shadow: 0px 1px 1px 2px #28a745;
+}
+
+.nav-brand{
+    color: #4aab3d;
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+
+.anchor{
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.navbar-custom .anchor:focus,.navbar-custom .anchor:hover{
+    color: #4aab3d;
+    font-weight: bolder;
+}

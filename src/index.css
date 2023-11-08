@@ -1,6 +1,5 @@
-*{
+*{  
+    margin: 0px;
+    padding: 0px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-body{
-    background-color: #f1fbff;
 }
