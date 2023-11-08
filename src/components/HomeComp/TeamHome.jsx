@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react'
 import { Container,Row,Col,Card,Button } from 'react-bootstrap'
-import "./styles/home.css"
+import "../styles/home.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTeamspeak } from '@fortawesome/free-brands-svg-icons';
 import { faPeopleGroup } from '@fortawesome/free-solid-svg-icons';
 
 export default function TeamHome() {

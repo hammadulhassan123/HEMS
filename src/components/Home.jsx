@@ -1,10 +1,10 @@
 import React from 'react'
 import { render } from 'react-dom'
-import Video from './Video';
-import AboutSection from './aboutH';
-import ServHome from './servHome';
-import TeamHome from './TeamHome';
-import Faq from './Faq';
+import Video from './HomeComp/Video';
+import AboutSection from './HomeComp/aboutH';
+import ServHome from './HomeComp/servHome';
+import TeamHome from './HomeComp/TeamHome';
+import Faq from './HomeComp/Faq';
 
 function Home() {
        return (

@@ -11,6 +11,7 @@ import ContactUs from './components/ContactUs';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import Page404 from './components/Page404';
+import Footer from './components/Footer';
 
 function App() {
   
@@ -24,9 +25,8 @@ function App() {
         <Route path='/signin' element={<SignIn/>}/>
         <Route path='/signup' element={<SignUp/>}/>
         <Route path='/*' element={<Page404/>}/>
-
-
       </Routes>
+      <Footer/>
     </>
   )
 }

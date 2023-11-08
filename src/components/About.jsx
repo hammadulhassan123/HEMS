@@ -1,5 +1,5 @@
 import React from 'react'
-import AboutSection from './aboutH'
+import AboutSection from './HomeComp/aboutH'
 import"./styles/home.css"
 
 export default function About() {

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Accordion,Row,Col,Container } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import "./styles/home.css"
+import "../styles/home.css"
 import { faQuestionCircle } from '@fortawesome/free-regular-svg-icons'
 
 export default function Faq() {

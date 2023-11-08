@@ -1,9 +1,10 @@
 import React from "react";
 import { Container, Row, Col, Image, Button } from "react-bootstrap";
+import "../styles/home.css"
 
 const AboutSection = () => {
   return (
-    <section className="about section-padding m-2">
+    <section className="about section-padding m-3">
       <Container className="p-2" style={{ boxShadow: "2px 2px 8px 2px rgba(0, 0, 0, 0.3)" }} >
         <Row>
           <Col lg={3} md={12} className="col-12">

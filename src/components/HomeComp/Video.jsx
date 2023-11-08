@@ -1,8 +1,8 @@
 import { useRef, useState } from "react"
 import React from 'react'
 import { Button } from 'react-bootstrap'
-import videoSrc from "../assets/Solar3D.mp4"
-import "./styles/home.css"
+import videoSrc from "./Solar3D.mp4"
+import "../styles/home.css"
 
 export default function Video() {
     const [isPlaying, setIsPlaying] = useState(false);
