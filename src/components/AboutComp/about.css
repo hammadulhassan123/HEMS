@@ -1,0 +1,10 @@
+:root{
+    --main-green: #2aab3d;
+    --other-green: #28a745;
+}
+.teamImg{
+    margin: 2vh 2vw;
+}
+.team{
+    border: 2px solid ;
+}

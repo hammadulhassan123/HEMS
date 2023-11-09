@@ -1,11 +1,12 @@
 import React from 'react'
 import AboutSection from './HomeComp/aboutH'
-import"./styles/home.css"
+import Teamcard from './AboutComp/Teamcard'
 
 export default function About() {
   return (
     <>
       <AboutSection/>
+      <Teamcard/>
     </>
   )
 }
