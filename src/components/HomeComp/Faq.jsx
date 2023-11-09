@@ -11,7 +11,9 @@ export default function Faq() {
             <Container className='mt-5 pb-5 faq'>
                 <Row className='faqHead'>
                     <Col md={12} lg={12} className='pt-2 pb-2 text-light text-center'>
+                      <b>
                         <h2>FAQ's <FontAwesomeIcon icon={faQuestionCircle} /> </h2>
+                      </b>
                     </Col>
                 </Row>
 

@@ -19,16 +19,16 @@ export default function Footer() {
                     <p>All Rights Reserved &copy;HEMS - 2023</p>
                 </Col>
                 <Col md={4} className="text-end fEnd">
-                    <a href="#" className="text-light text-capitalize ms-3" >
+                    <a href="https://www.facebook.com/" target='blank' className="text-light text-capitalize ms-3" >
                     <FontAwesomeIcon icon={faFacebook} size='2x'/>
                     </a>
-                    <a href="#" className="text-light ms-3">
+                    <a href="https://twitter.com/?lang=en" target='blank' className="text-light ms-3">
                     <FontAwesomeIcon icon={faXTwitter} size='2x'/>
                     </a>
-                    <a href="#" className="text-light ms-3">
+                    <a href="https://www.linkedin.com/" target='blank' className="text-light ms-3">
                     <FontAwesomeIcon icon={faLinkedin} size='2x'/>
                     </a>
-                    <a href="#" className="text-light ms-3">
+                    <a href="https://www.instagram.com/" target='blank' className="text-light ms-3">
                     <FontAwesomeIcon icon={faInstagram} size='2x'/>
                     </a>
                 </Col>

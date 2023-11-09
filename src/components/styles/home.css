@@ -6,8 +6,9 @@
     --main-green: #4aab3d; /* Default background color */
   }
 .main {
+    position: relative;
     width: 100%;
-    height: 85vh;
+    height: 100vh;
     box-shadow: 0px 2px 4px 3px #2b2828
 }
 
@@ -49,6 +50,7 @@ video {
 .about-head{
     background-color: #4aab3d;
     text-align: justify;
+    border-radius: 4rem 0;
 }
 
 /* .abtBtn{
@@ -70,23 +72,27 @@ video {
 
 }
 .servhome{
+    position: relative;
     margin: 2vh 0vw;
     color: black;
-    border-color: 1px solid #20f4675d;
-    border-radius: 4rem;
-    background-color: whitesmoke;
+    border: 5px solid var(--main-green);
+    border-radius: 4rem 0px;
+    background-color: white;
     box-shadow: 1px 1px 2px 2px slategray;
     transition: background-color 0.3s ease-in;
 }
 
 .servhome:hover{
     color: whitesmoke;
-    background-color: rgba(0,0,0, 0.3);
+    background-color: rgba(0,0,0, 0.5);
+    border-color: #28a754;
+    border-radius: 0px 4rem;
+    .servImg{
+        opacity: 0.6;
+    }
 }
 
-/* .servBtn{
-    background-color: var(--main-green);
-    color: black;
+.servBtn{
     transform: perspective(1px) translateZ(0);
     position: relative;
     border-radius: 3rem;
@@ -95,8 +101,8 @@ video {
 }
 
 .servBtn:hover{
-    background-color: #000;
-} */
+    background-color: var(--main-green);
+}
 
 
 .teamHead{

@@ -1,5 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Image, Button } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLightbulb } from "@fortawesome/free-regular-svg-icons";
 import "../styles/home.css"
 
 const AboutSection = () => {
@@ -15,7 +17,7 @@ const AboutSection = () => {
           <Col lg={9} md={12} className="col-12 ps-lg-5 mt-md-5">
             <div className="about-text">
               <h2 className="about-head text-light p-3 text-center">
-                We are Providing Innovative Solution
+                We are Providing Innovative Solution <span> <FontAwesomeIcon icon={faLightbulb} className="text-dark"/></span>
               </h2>
               <p className="mt-5">
                 Energy management is an important problem being faced in many

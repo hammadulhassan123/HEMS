@@ -21,6 +21,7 @@ function CHome() {
         <Row>
           <Col lg={3} md={12} className="col-12">
             <Card className="text-center pb-2" id="serv-card">
+              <Card.Img variant='top' src='src/assets/1.png' />
               <Card.Body>
                 <FontAwesomeIcon icon={faMinus} size='2x'/>
                 <Card.Title>Best Quality</Card.Title>

@@ -13,9 +13,11 @@ class NavBar extends Component {
             <Navbar className='navbar-custom' expand="lg" bg="white" variant="light" sticky='top' >
             <Container>
             <Navbar.Brand className="nav-brand" >
-                <img src="src/assets/hems_logo.png" alt="" className='navbarLogo mb-1' style={{height:"30px",width:"40px"}}/>
-                <span>HEMS</span>
-                 {/* <span className='text-success'>H</span><span className="text-warning">E</span><span className="text-primary">MS</span> */}
+                <NavLink to="/" style={{textDecoration:"none"}}>
+                  <img src="src/assets/hems_logo.png" alt="" className='navbarLogo mb-1' style={{height:"30px",width:"40px", borderRadius:"10px"}}/>
+                  {/* <span>HEMS</span> */}
+                  <span className='text-success'>H</span><span className="text-success">E</span><span className="text-dark">MS</span>
+                </NavLink>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarSupportedContent" />
             <Navbar.Collapse id="navbarSupportedContent">
