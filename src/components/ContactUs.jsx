@@ -1,6 +1,5 @@
 import { faDatabase, faMailForward, faMobile, faPhoneFlip} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-FontAwesomeIcon
 import React from 'react'
 import { Row,Container,Col,Button,Form } from 'react-bootstrap'
 import "./styles/home.css"
@@ -13,21 +12,17 @@ export default function ContactUs() {
   }; 
   return (
     <>
+      <section >
       <Container>
             <Row>
                 <Col md={12} className="">
                   <div className="section-header text-center pb-5 mt-5">
-                  <mark className='teamHead'>Contact Us <FontAwesomeIcon icon={faPhoneFlip} color='black'/></mark>             
+                  <mark className='teamHead'>Contact Us <FontAwesomeIcon icon={faPhoneFlip} color='black' fade/></mark>             
                   </div>
                 </Col>
            </Row>
-      </Container>
-
-      <section >
-        <Container>
-           <Row>
-                <Col className='contactForm' md={12} lg={12}>  
-                <div className="overlay"></div>
+           <Row className='justify-content-center'>
+                <Col className='contactForm' md={6} >  
                 <Form className='contactBody'>
                     <Form.Group className="mb-3" controlId="exampleInputName">
                       <Form.Label> <h4> Name :</h4></Form.Label>
@@ -35,8 +30,7 @@ export default function ContactUs() {
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                       <Form.Label><h4>Email :</h4></Form.Label>
-                      <Form.Control type="email" placeholder="Enter email"/>
-                      
+                      <Form.Control type="email" placeholder="Enter Your Email"/>
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="exampleInpuPhone">
                       <Form.Label> <h4>Contact No :</h4></Form.Label>

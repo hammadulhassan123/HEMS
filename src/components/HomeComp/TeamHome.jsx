@@ -31,7 +31,7 @@ export default function TeamHome() {
 
                 <Row>
                     <Col lg={3} md={6} className='col-12'>
-                        <Card className='teamcard  text-center text-capitalize'>
+                        <Card className='teamcard text-center text-capitalize'>
                                 <img src="src/assets/Sir Zain.jpg" className='teamImg' alt="" />
                             <div className="teamBody">
                                 <h5>Sir Zain Ul Abideen</h5>

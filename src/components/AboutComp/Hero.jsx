@@ -17,7 +17,7 @@ const Hero = () => {
                 Get to know about our team
             </p>
 
-            <p className="lead">And their role in the project</p>
+            <p className="lead">And their role in this project</p>
           </div>
         </div>
       </Container>
