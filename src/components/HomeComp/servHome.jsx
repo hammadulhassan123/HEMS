@@ -36,7 +36,7 @@ export default function ServHome() {
                   <Card.Title> <h4>Smart Scheduling</h4></Card.Title>
                   <Card.Img src="src/assets/1.png" className="servImg mt-2 mb-1" variant="top" style={{borderRadius:"10px", height:"30vh"}} />
                     <Button className="servBtn" variant="outline-success" onClick={() => hideNShow(0)}>Click To Learn More <FontAwesomeIcon icon={faArrowCircleDown} /></Button>
-                    <Card.Text className="text-start ms-2 me-2 servText" style={{ display: showText[0] ? 'block' : 'none' }}>
+                    <Card.Text className="text-start ms-2 me-2 servText" style={{ display: showText[0] ? 'block' : 'none'}}>
                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                       Officiis ab obcaecati non quidem, nihil corporis harum sit
                       sequi error cum, neque quibusdam quis libero iure.
@@ -48,8 +48,8 @@ export default function ServHome() {
             <Col lg={3} md={12} className="col-12">
               <Card className="text-center pb-2 servhome sh2" >
                 <Card.Body className="cardBody" id="card2">
-                  <FontAwesomeIcon className="card-icon" icon={faBalanceScale} size="2x" />
-                  <Card.Title>Load Balancing</Card.Title>
+                  <FontAwesomeIcon className="card-icon text-dark" icon={faBalanceScale} size="2x" />
+                  <Card.Title><h4>Load Balancing</h4></Card.Title>
                   <Card.Img src="src/assets/2.png" className="servImg mt-2 mb-1" variant="bottom" style={{borderRadius:"10px",height:"30vh"}} />
                   <Button className="servBtn" variant="outline-success" onClick={() => hideNShow(1)}>Click To Learn More <FontAwesomeIcon icon={faArrowCircleDown} /></Button>
                     <Card.Text className="text-start ms-2 me-2 servText" style={{ display: showText[1] ? 'block' : 'none' }}>
@@ -63,8 +63,8 @@ export default function ServHome() {
             <Col lg={3} md={12} className="col-12">
               <Card className="text-center pb-2 servhome sh3" >
                 <Card.Body className="servBody" id="card3">
-                  <FontAwesomeIcon className="card-icon" icon={faHandHoldingDollar} size="2x"/>
-                  <Card.Title>Cost Saving</Card.Title>
+                  <FontAwesomeIcon className="card-icon text-dark" icon={faHandHoldingDollar} size="2x"/>
+                  <Card.Title><h4>Cost Saving</h4></Card.Title>
                   <Card.Img src="src/assets/3.png" className="servImg mt-2 mb-1" variant="top" style={{borderRadius:"10px",height:"30vh"}} />
                   <Button className="servBtn" variant="outline-success" onClick={() => hideNShow(2)}>Click To Learn More <FontAwesomeIcon icon={faArrowCircleDown} /></Button>
                     <Card.Text className="text-start ms-2 me-2 servText" style={{ display: showText[2] ? 'block' : 'none' }}>
@@ -78,8 +78,8 @@ export default function ServHome() {
             <Col lg={3} md={12} className="col-12">
               <Card className="text-center pb-2 servhome sh4" >
                 <Card.Body className="cardBody" id="card4">
-                  <FontAwesomeIcon className="card-icon" icon={faPlug} size="2x"  />
-                  <Card.Title>Off Grid</Card.Title>
+                  <FontAwesomeIcon className="card-icon text-dark" icon={faPlug} size="2x"  />
+                  <Card.Title><h4>Off Grid</h4></Card.Title>
                   <Card.Img src="src/assets/Utility_Scale_Solar.jpeg" className="servImg mt-2 mb-1" variant="top" style={{borderRadius:"10px",height:"30vh"}} />
                   <Button className="servBtn" variant="outline-success" onClick={() => hideNShow(3)}>Click To Learn More <FontAwesomeIcon icon={faArrowCircleDown} /></Button>
                     <Card.Text className="text-start ms-2 me-2 servText" style={{ display: showText[3] ? 'block' : 'none' }}>

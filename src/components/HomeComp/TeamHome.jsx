@@ -13,10 +13,9 @@ export default function TeamHome() {
             teamcard.addEventListener('click', function() {
                 const teamBody = this.querySelector('.teamBody');
                 teamBody.style.right = teamBody.style.right === '0' ? '-100%' : '0';
-            });
-            
+            });            
         });
-    }, []);
+    }, [null]);
 
   return (
     <>

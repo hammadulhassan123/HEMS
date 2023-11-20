@@ -60,7 +60,7 @@ export default function SignIn() {
                 />
               </Form.Group>
 
-              <Button variant="primary" type="submit">
+              <Button variant="primary" type="submit" className="m-3">
                 Sign In
               </Button>
             </Form>

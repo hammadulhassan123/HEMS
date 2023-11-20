@@ -3,12 +3,40 @@
     --other-green: #28a745;
     --hero-grey:#4444443f;
     --hero-dark: #00000067;
+    
 }
 
 .cardTeam{
     border: 2px solid black;
-    box-shadow: 0px 1px 2px 2px darkslategray;
-  
+    box-shadow: 0px 1px 3px 2px var(--hero-grey);
+    position: relative;
+    text-overflow: ellipsis;
+    &:hover{
+        background-color: #000000c0;
+        color: white;
+        text-overflow: unset;
+        scale: 1.05;
+        .socials a{
+            color: white;
+        }
+    }
+}
+
+.cardTImg{
+     display: "inline-block";
+     max-width: 100%; 
+     height: 30vh;
+     border-radius: 40px;
+    /* border-radius: 50%; */
+}
+.socials a{
+    color:rgba(0, 0, 0, 0.9);
+    padding: 3.5%;
+    /* margin-inline: 2% 5%;
+    writing-mode: horizontal-tb; */
+}
+.socials a :hover{
+    color: #28a745;
 }
 
 .heroMain{
@@ -18,4 +46,27 @@
     background-repeat: no-repeat;
     background-blend-mode: overlay;
     background-color: var(--hero-dark);
+}
+
+/* Media Query for Tablets */
+@media only screen and (min-width:768px) and (max-width:991px){
+    .cardTImg {
+        max-height: 20vh; /* Adjust the height for tablets */
+    }
+    .cardTText{
+        font-size: 20px;
+        text-align: left;   
+    }
+}
+
+
+/* Media Query for Mobile */
+@media only screen and (max-width: 767px) {
+    .cardTImg {
+        height: 15vh; /* Adjust the height for mobile */
+    }
+    .cardTText{
+        font-size: 15px;
+        text-align: left;
+    }
 }

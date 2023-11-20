@@ -13,7 +13,7 @@ class NavBar extends Component {
             <Navbar className='navbar-custom' expand="lg" bg="white" variant="light" sticky='top' >
             <Container>
             <Navbar.Brand className="nav-brand" >
-                <NavLink to="/" style={{textDecoration:"none"}}>
+                <NavLink to="/" className="active" style={{textDecoration:"none"}}>
                   <img src="src/assets/hems_logo.png" alt="" className='navbarLogo mb-1' style={{height:"30px",width:"40px", borderRadius:"10px"}}/>
                   {/* <span>HEMS</span> */}
                   <span className='text-success'>H</span><span className="text-success">E</span><span className="text-dark">MS</span>
@@ -22,7 +22,7 @@ class NavBar extends Component {
             <Navbar.Toggle aria-controls="navbarSupportedContent" />
             <Navbar.Collapse id="navbarSupportedContent">
                 <Nav className="ms-auto mb-2 mb-lg-0 ">
-                <NavLink to="/" className='anchor p-2'>Home</NavLink>
+                <NavLink to="/" className='anchor p-2 active'>Home</NavLink>
                 <NavLink to="/about" className='anchor p-2'>About</NavLink>
                 <NavLink to="/contact" className='anchor p-2'>Contact</NavLink>
                 <NavLink to="/signin" className='anchor p-2'>Sign-In</NavLink>

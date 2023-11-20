@@ -7,10 +7,10 @@ import "../styles/home.css"
 const AboutSection = () => {
   return (
     <section className="about section-padding m-3">
-      <Container className="p-2" style={{ boxShadow: "2px 2px 8px 2px rgba(0, 0, 0, 0.3)" }} >
+      <Container className="p-2" style={{ boxShadow: "0px 2px 8px 2px #00000015;",backgroundColor:"black" }} >
         <Row>
           <Col lg={3} md={12} className="col-12">
-            <div className="about-img">
+            <div className="about-img img-fluid">
               <Image src="src/assets/Solar on House new.jpg"  alt="A Tall City Building" fluid />
             </div>
           </Col>

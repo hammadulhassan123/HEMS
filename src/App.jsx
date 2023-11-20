@@ -12,12 +12,14 @@ import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import Page404 from './components/Page404';
 import Footer from './components/Footer';
+import SideBar from "./components/SideBar";
 
 function App() {
   
   return (
     <>
       <NavBar/>
+      <SideBar/>
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/about' element={<About/>}/>
