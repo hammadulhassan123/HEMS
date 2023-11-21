@@ -16,7 +16,7 @@ export default function Footer() {
                     </h3>
                 </Col>
                 <Col md={4} className="text-center">
-                    <p>All Rights Reserved &copy;HEMS - 2023</p>
+                    <p>All Rights Reserved &copy;HEMS-2023</p>
                 </Col>
                 <Col md={4} className="text-end fEnd">
                     <a href="https://www.facebook.com/" target='blank' className="text-light text-capitalize ms-3" >

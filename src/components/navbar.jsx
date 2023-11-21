@@ -27,6 +27,9 @@ class NavBar extends Component {
                 <NavLink to="/contact" className='anchor p-2'>Contact</NavLink>
                 <NavLink to="/signin" className='anchor p-2'>Sign-In</NavLink>
                 <NavLink to="/signup" className='anchor p-2'>Sign-Up</NavLink>
+                <NavLink to='/userhome' className='anchor p-2'>DashBoard</NavLink>
+                <NavLink to='/appliances' className='anchor p-2'>Appliances</NavLink>
+                
                 </Nav>
             </Navbar.Collapse>
             </Container>

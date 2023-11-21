@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link,NavLink } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import './styles/home.css';
 
@@ -24,13 +25,13 @@ function SideBar() {
           <FontAwesomeIcon icon={faBars}/> <span>Menu</span>
         </Button>
         <ul id='menuList' ref={menuListRef} className={menuActive ? 'active' : ''}>
-          <li><a href="">DashBoard</a></li>
-          <li><a href="">Add a new Device</a></li>
-          <li><a href="">Scheduling</a></li>
+          <li><NavLink to='/userhome' className='anchor p-2'>DashBoard</NavLink></li>
+          <li><NavLink to="/">Add a New Device</NavLink></li>
+          <li><NavLink to="/">Scheduling</NavLink></li>
         </ul>
+        {/* <h3><b>Welcome to Home Energy Management System</b></h3> */}
       </div>
 
-      <h3><b>Welcome to Home Energy Management System</b></h3>
     </>
   );
 }

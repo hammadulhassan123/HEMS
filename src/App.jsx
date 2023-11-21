@@ -13,6 +13,9 @@ import SignUp from './components/SignUp';
 import Page404 from './components/Page404';
 import Footer from './components/Footer';
 import SideBar from "./components/SideBar";
+import UserHome from './components/Dashboard/UserHome';
+import Appliances from "./components/Dashboard/Appliances";
+
 
 function App() {
   
@@ -26,6 +29,8 @@ function App() {
         <Route path='/contact' element={<ContactUs/>}/>
         <Route path='/signin' element={<SignIn/>}/>
         <Route path='/signup' element={<SignUp/>}/>
+        <Route path="/userhome" element={<UserHome/>} />
+        <Route path="/appliances" element={<Appliances/>}/>
         <Route path='/*' element={<Page404/>}/>
       </Routes>
       <Footer/>
