@@ -1,72 +1,75 @@
-import React, { useState } from "react";
-import { Form, Button, Container, Row, Col } from "react-bootstrap";
+import React, { useState } from 'react';
+import { Form, Button, Alert } from 'react-bootstrap';
 
-import"./styles/home.css"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
+const SignIn = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
-export default function SignIn() {
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  });
+  const handleSubmit = async (event) => {
+    event.preventDefault();
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({ ...prevData, [name]: value }));
-  };
+    try {
+      const response = await fetch('http://192.168.234.239/api/login', {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Add your signin logic here
-    console.log("Form submitted:", formData);
+      const data = await response.json();
+
+      if (data.error) {
+        setErrorMessage(data.error);
+      } else {
+        // Implement your logic for successful login (e.g., redirect, store token)
+        // This example just displays the response for demo purposes
+        console.log('Login successful!', data);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setErrorMessage('An error occurred. Please try again.');
+    }
   };
 
   return (
-    <>
-    <Container>
-      <Row>
-        <Col md={12}>
-        </Col>
-      </Row>
+    <div className="container mt-3">
+      <h1>Login</h1>
+      <Form onSubmit={handleSubmit}>
+        <Form.Group controlId="formBasicEmail">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control
+            type="email"
+            placeholder="Enter email"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+          />
+        </Form.Group>
 
-        <Row className="justify-content-center">
-              <div className="section-header justify-content-center text-center mt-5 mb-3" >
-                  <mark className="teamHead">Sign-In to your Account <FontAwesomeIcon icon={faUser}/></mark>
-              </div>
-          <Col md={6} className="signinForm" style={{border:"2px solid black"}}>
-            <Form onSubmit={handleSubmit}>
-              <Form.Group controlId="formEmail">
-                <Form.Label>Email address</Form.Label>
-                <Form.Control
-                  type="email"
-                  placeholder="Enter your email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                />
-              </Form.Group>
+        <Form.Group controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control
+            type="password"
+            placeholder="Enter password"
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
+          />
+        </Form.Group>
 
-              <Form.Group controlId="formPassword">
-                <Form.Label>Password</Form.Label>
-                <Form.Control
-                  type="password"
-                  placeholder="Enter your password"
-                  name="password"
-                  value={formData.password}
-                  onChange={handleChange}
-                  required
-                />
-              </Form.Group>
+        <Button variant="primary" type="submit">
+          Sign In
+        </Button>
+      </Form>
 
-              <Button variant="primary" type="submit" className="m-3">
-                Sign In
-              </Button>
-            </Form>
-          </Col>
-        </Row>
-      </Container>
-    </>
+      {errorMessage && (
+        <Alert variant="danger">
+          {errorMessage}
+        </Alert>
+      )}
+    </div>
   );
-}
+};
+
+export default SignIn;

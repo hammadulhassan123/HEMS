@@ -190,7 +190,7 @@ video {
     z-index: 0;
 } */
 .footer{
-    position: static;
+    margin-top: 80dvh;
 }
 .fEnd a :hover {
     color: #4aab3d;

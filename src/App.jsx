@@ -13,7 +13,7 @@ import SignUp from './components/SignUp';
 import Page404 from './components/Page404';
 import Footer from './components/Footer';
 import SideBar from "./components/SideBar";
-import UserHome from './components/Dashboard/UserHome';
+import UserHome from "./components/Dashboard/userHome";
 import Appliances from "./components/Dashboard/Appliances";
 
 
@@ -22,7 +22,7 @@ function App() {
   return (
     <>
       <NavBar/>
-      <SideBar/>
+      {/* <SideBar/> */}
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/about' element={<About/>}/>

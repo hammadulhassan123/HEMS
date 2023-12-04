@@ -1,98 +1,124 @@
-import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
-import "./styles/home.css"
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     password: '',
-    confirmPassword: '',
+    c_password: '',
   });
+
+  const [response, setResponse] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
+  const handleRegister = () => {
+    // fetch('http://192.168.57.239/api/register', {
+    fetch('http://192.168.234.239/api/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => response.json())
+      .then((responseData) => {
+        if (responseData.error) {
+          setErrorMessage(responseData.error);
+          setResponse('');
+        } else {
+          setResponse(JSON.stringify(responseData, null, 2));
+          setErrorMessage('');
+        }
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        setErrorMessage('An error occurred. Please try again.');
+        setResponse('');
+      });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your signup logic here
-    console.log('Form submitted:', formData);
+    handleRegister();
   };
 
   return (
-    <> 
-      <Container>
-      <Row>
-        <Col md={12}>
-              
-        </Col>
-      </Row>
-        <Row className="signupForm justify-content-center">
-              <div className="section-header justify-content-center text-center mt-4 mb-3" >
-                  <mark className="teamHead">New? Let's Create An Account <FontAwesomeIcon icon={faUserPlus}/></mark>
-              </div>
-          <Col md={6} className='signupForm' style={{border:"2px solid black"}}>
-            <Form onSubmit={handleSubmit}>
-              <Form.Group controlId="formName">
-                <Form.Label>Name</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Enter your name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                />
-              </Form.Group>
-
-              <Form.Group controlId="formEmail">
-                <Form.Label>Email address</Form.Label>
-                <Form.Control
-                  type="email"
-                  placeholder="Enter your email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                />
-              </Form.Group>
-
-              <Form.Group controlId="formPassword">
-                <Form.Label>Password</Form.Label>
-                <Form.Control
-                  type="password"
-                  placeholder="Enter your password"
-                  name="password"
-                  value={formData.password}
-                  onChange={handleChange}
-                  required
-                />
-              </Form.Group>
-
-              <Form.Group controlId="formConfirmPassword">
-                <Form.Label>Confirm Password</Form.Label>
-                <Form.Control
-                  type="password"
-                  placeholder="Confirm your password"
-                  name="confirmPassword"
-                  value={formData.confirmPassword}
-                  onChange={handleChange}
-                  required
-                />
-              </Form.Group>
-
-              <Button variant="primary" type="submit" className='mt-2'>
-                Sign Up
-              </Button>
-            </Form>
+    <Container>
+      <h1 className="mt-3">Registration Form</h1>
+      <Form id="registrationForm" onSubmit={handleSubmit}>
+        <Row>
+          <Col>
+            <Form.Group controlId="name">
+              <Form.Label>Name:</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter your name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+          </Col>
+          <Col>
+            <Form.Group controlId="email">
+              <Form.Label>Email:</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="Enter your email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
           </Col>
         </Row>
-      </Container>
-    </>
+        <Row>
+          <Col>
+            <Form.Group controlId="password">
+              <Form.Label>Password:</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Enter your password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+          </Col>
+          <Col>
+            <Form.Group controlId="c_password">
+              <Form.Label>Confirm Password:</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Confirm your password"
+                name="c_password"
+                value={formData.c_password}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+          </Col>
+        </Row>
+        <Button variant="primary" type="submit">
+          Register
+        </Button>
+        <div className="mt-3" id="response">
+          {response && <pre>{response}</pre>}
+        </div>
+        <div className="error-message" id="errorMessage">
+          {errorMessage && <p className="text-danger">{errorMessage}</p>}
+        </div>
+      </Form>
+    </Container>
   );
 };
 
