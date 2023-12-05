@@ -190,7 +190,7 @@ video {
     z-index: 0;
 } */
 .footer{
-    margin-top: 80dvh;
+    margin-top: 8em;
 }
 .fEnd a :hover {
     color: #4aab3d;
@@ -243,6 +243,11 @@ video {
     
 }
     /*Sidebar */
+.sideNav{
+    display: flex;
+    flex-direction:column;
+    align-content: space-evenly;
+}
 
 .menu{
     color: black;
@@ -266,7 +271,7 @@ video {
 }
 
 #menuList{
-    background: rgb(237, 235, 235);
+    background: white;
     width: 250px;
     height: 100vh;
     list-style: none;

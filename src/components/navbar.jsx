@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Route, Routes } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 import "./styles/navbar.css"
+import Home from './Home';
+import About from './About';
+import ContactUs from './ContactUs';
+import SignIn from './SignIn';
+import SignUp from './SignUp';
+import Page404 from './Page404';
 
 class NavBar extends Component {
   render() {
@@ -27,14 +33,22 @@ class NavBar extends Component {
                 <NavLink to="/contact" className='anchor p-2'>Contact</NavLink>
                 <NavLink to="/signin" className='anchor p-2'>Sign-In</NavLink>
                 <NavLink to="/signup" className='anchor p-2'>Sign-Up</NavLink>
-                <NavLink to='/userhome' className='anchor p-2'>DashBoard</NavLink>
-                <NavLink to='/appliances' className='anchor p-2'>Appliances</NavLink>
+                {/* <NavLink to='/userhome' className='anchor p-2'>DashBoard</NavLink>
+                <NavLink to='/appliances' className='anchor p-2'>Appliances</NavLink> */}
                 
                 </Nav>
             </Navbar.Collapse>
             </Container>
             </Navbar>
            
+            <Routes>
+              <Route path='/' element={<Home/>}/>
+              <Route path='/about' element={<About/>}/>
+              <Route path='/contact' element={<ContactUs/>}/>
+              <Route path='/signin' element={<SignIn/>}/>
+              <Route path='/signup' element={<SignUp/>}/>
+              <Route path='/*' element={<Page404/>}/>
+            </Routes>
         </>
     );
   }

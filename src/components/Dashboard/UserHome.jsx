@@ -1,13 +1,13 @@
 import React from 'react'
 import { Container,Table, Button } from 'react-bootstrap'
-import '../styles/home.css'
+import '../../App.css'
 
 function UserHome() {
   return (
     <>
     <div className='section-header justify-content-center text-center mt-4 mb-3'>
       <h1 > 
-        Welcome To User Panel
+        Welcome To User Panel 
       </h1>
     </div>
     <Container>
