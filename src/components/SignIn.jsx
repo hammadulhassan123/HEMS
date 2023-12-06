@@ -18,10 +18,19 @@ const SignIn = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     try{
-      http.post('/login', {email:email, password:password})
-      .then((res)=>{
-        setToken(res.data.user, res.data.access_token);
-        //  console.log(res.data);
+      http.post('/login', {email:email, password:password}).then((res)=>{
+        console.log(res.data);
+        const { data, message, success } = res.data;
+        if (success) {
+          // Extract user details and token from response
+          const { token, ...userData } = data;
+          // Storing token and user details in localStorage
+          setToken(userData, token);
+          toast.success(message);
+        } else {
+          toast.error(message);
+          setErrorMessage('Login Failed');
+        }
         // toast.success("Login Success");
       })
     }catch(error){
@@ -30,30 +39,7 @@ const SignIn = () => {
       setErrorMessage('An error occurred. Please try again.');
     }
   
-    // fetch() method
-  //   try {
-  //     const response = await fetch('http://localhost:8000/api/login', {
-  //       method: 'POST',
-  //       mode: 'cors',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body: JSON.stringify({ email, password }),
-  //     });
 
-  //     const data = await response.json();
-
-  //     if (data.error) {
-  //       setErrorMessage(data.error);
-  //     } else {
-  //       // Implement your logic for successful login (e.g., redirect, store token)
-  //       // This example just displays the response for demo purposes
-  //       console.log('Login successful!', data);
-  //     }
-  //   } catch (error) {
-  //     console.error('Error:', error);
-  //     setErrorMessage('An error occurred. Please try again.');
-  //   }
   };
 
   return (

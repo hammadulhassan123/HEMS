@@ -112,7 +112,7 @@ video {
 .teamHead{
     position: relative;
     background: #4aab3d;
-    font-weight:bolder; 
+    font-weight:bold; 
     font-size:35px; 
     color:white;
     border-radius:4rem 0;
@@ -190,7 +190,7 @@ video {
     z-index: 0;
 } */
 .footer{
-    margin-top: 8em;
+    margin-top: 75vh;
 }
 .fEnd a :hover {
     color: #4aab3d;
@@ -229,6 +229,11 @@ video {
     }
 }
 
+.signhead{
+    text-overflow: ellipsis;
+    display: inline;
+    background-color: var(--main-green);
+}
 .signinForm{
     position: relative;
     margin: 0vh 0vw 15% 0vw;

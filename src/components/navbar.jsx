@@ -10,9 +10,21 @@ import ContactUs from './ContactUs';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
 import Page404 from './Page404';
+import UserHome from './Dashboard/userHome';
+import Footer from './Footer';
+import AuthUser from '../AuthUser';
 
 class NavBar extends Component {
   render() {
+    // const {getToken}= AuthUser();
+    // if(!getToken()){
+    //   return (
+    //     <>
+    //       <SignIn/>
+    //       <Footer/>
+    //     </>
+    //   )
+    // }
     return (
         <>
             {/* Navbar is here */}
@@ -41,14 +53,17 @@ class NavBar extends Component {
             </Container>
             </Navbar>
            
+
             <Routes>
               <Route path='/' element={<Home/>}/>
               <Route path='/about' element={<About/>}/>
               <Route path='/contact' element={<ContactUs/>}/>
               <Route path='/signin' element={<SignIn/>}/>
               <Route path='/signup' element={<SignUp/>}/>
+              {/* <Route path="/userhome" element={<UserHome/>} /> */}
               <Route path='/*' element={<Page404/>}/>
             </Routes>
+            <Footer/>
         </>
     );
   }

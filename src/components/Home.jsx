@@ -5,6 +5,8 @@ import AboutSection from './HomeComp/aboutH';
 import ServHome from './HomeComp/servHome';
 import TeamHome from './HomeComp/TeamHome';
 import Faq from './HomeComp/Faq';
+import { Route, Routes } from 'react-router-dom';
+import UserHome from './Dashboard/userHome';
 
 function Home() {
        return (

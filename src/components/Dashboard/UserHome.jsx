@@ -1,13 +1,15 @@
 import React from 'react'
 import { Container,Table, Button } from 'react-bootstrap'
 import '../../App.css'
+import AuthUser from '../../AuthUser'
 
 function UserHome() {
+  const {user}=AuthUser();
   return (
     <>
-    <div className='section-header justify-content-center text-center mt-4 mb-3'>
+    <div className='section-header justify-content-center text-center mt-4'>
       <h1 > 
-        Welcome To User Panel 
+        Welcome To Your Dashboard-{user.name}
       </h1>
     </div>
     <Container>
