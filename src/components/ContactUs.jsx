@@ -17,7 +17,7 @@ export default function ContactUs() {
             <Row>
                 <Col md={12} className="">
                   <div className="section-header text-center pb-5 mt-5">
-                  <mark className='teamHead'>Contact Us <FontAwesomeIcon icon={faPhoneFlip} color='black' fade/></mark>             
+                  <mark className='teamHead'>Contact Us<FontAwesomeIcon icon={faPhoneFlip} color='black' fade/></mark>             
                   </div>
                 </Col>
            </Row>

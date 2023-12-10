@@ -190,7 +190,7 @@ video {
     z-index: 0;
 } */
 .footer{
-    margin-top: 75vh;
+    margin-top: 15rem;
 }
 .fEnd a :hover {
     color: #4aab3d;
@@ -202,7 +202,6 @@ video {
     position: relative;
     border: 2px solid black;
     box-shadow: 0px 2px 3px 2px darkslategray;
-    margin: 0vh 0vw 10vh 0vw;
     padding: 2%;
     background: url("src/assets/Solar installation new.jpg");
     background-position: fixed;
@@ -236,14 +235,12 @@ video {
 }
 .signinForm{
     position: relative;
-    margin: 0vh 0vw 15% 0vw;
     padding: 5%;
     
 }
 
 .signupForm{
     position: relative;
-    margin: 0vh 0vw 0vh 0vw;
     padding: 5%;
     
 }
@@ -334,3 +331,5 @@ video {
     }
 }
     /* sidebar styling ends */
+
+    

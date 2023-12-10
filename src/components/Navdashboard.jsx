@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Container, Nav, Navbar } from 'react-bootstrap'
 import { Route, Routes,NavLink,Link } from 'react-router-dom'
-import UserHome from './Dashboard/userHome'
+import UserHome from './Dashboard/UserHome'
 import Appliances from './Dashboard/Appliances'
 import Page404 from './Dashboard/Page404'
 import Footer from './Footer'
@@ -14,6 +14,14 @@ export default function Navdashboard() {
   function logoutUser(){
     if(token != undefined){
       logout();
+    }
+  }
+
+  function logoutPrm(){
+    if(confirm("Do You Want to Sign-out?")){
+      logoutUser();
+    }else{
+      alert("Signout Cancelled")
     }
   }
 
@@ -34,7 +42,7 @@ export default function Navdashboard() {
                 {/* <NavLink to='/' className='anchor p-2'>Home</NavLink> */}
                 <NavLink to='/userhome' className='anchor p-2'>DashBoard</NavLink>
                 <NavLink to='/addAppliances' className='anchor p-2'>Add Appliances</NavLink>
-                <Button variant="outline-primary" onClick={logoutUser}>Logout</Button>
+                <Button variant="outline-warning btn-sm" onClick={logoutPrm}>Logout</Button>
                 </Nav>
             </Navbar.Collapse>
             </Container>

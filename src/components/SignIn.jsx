@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container,Row, Col,Form, Button, Alert } from 'react-bootstrap';
+import { Container,Row, Col,Form, Button} from 'react-bootstrap';
 import AuthUser from '../AuthUser';
 import "../App.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -14,8 +14,18 @@ const SignIn = () => {
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
  
+  const errCheck=()=>{
+    if(email=="" ||email==null){
+      alert("Enter Email");
+    }
+    if(password=="" || password == null){
+      alert("Enter Password");
+    }
+    return;
+  }
 
   const handleSubmit = (event) => {
+    errCheck();
     event.preventDefault();
     try{
       http.post('/login', {email:email, password:password}).then((res)=>{

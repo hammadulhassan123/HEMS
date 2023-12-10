@@ -1,90 +1,81 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Container,Table, Button } from 'react-bootstrap'
 import '../../App.css'
 import AuthUser from '../../AuthUser'
+import DataTable from 'react-data-table-component'
+import LocationComponent from './LocationComponent'
 
 function UserHome() {
-  const {user}=AuthUser();
+  const {http,user}=AuthUser();
+
+  const [appls,setAppls]= useState([]);
+
+  const getAppliances = async () => {
+    try {
+      const response = await http.get(`/appliances/${user.user_id}`);
+      console.log(user.user_id);
+      setAppls(response.data.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const columns =[
+    {
+      name: "Appliance Id",
+      selector: (row) => row.id,
+      sortable: true,
+    },
+    {
+      name: "Appliance Name",
+      selector: (row) => row.a_name,
+      sortable: true,
+    },
+    {
+      name: "Appliance Consumption",
+      selector: (row) => row.a_consumption,
+      sortable: true,
+    },
+    {
+      name: "Appliance Watt",
+      selector: (row) => row.a_watt,
+      sortable: true,
+    },
+    {
+      name: "Device",
+      selector: (row) => row.device,
+    },
+    {
+      name: "User-Id",
+      selector: (row) => row.user_id,
+    },
+  ]
+
+  useEffect(()=>{
+    getAppliances();
+  },[])
+
   return (
     <>
-    <div className='section-header justify-content-center text-center mt-4'>
-      <h1 > 
-        Welcome To Your Dashboard-{user.name}
-      </h1>
-    </div>
-    <Container>
-      <h1>Appliances data</h1>
-      <Table className='appTable ' responsive striped bordered hover>
-        <thead>
-          <tr>
-            <th>Appliance id</th>
-            <th>Appliance name</th>
-            <th>Appliance category</th>
-            <th>Appliance consumption rate</th>
-            <th>Appliance watt</th>
-            <th>Creation Date</th>
-            <th>Updation Date</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Refrigerator</td>
-            <td>Home Appliance</td>
-            <td>120V</td>
-            <td>600W</td>
-            <td>2022-04-01</td>
-            <td>2022-04-02</td>
-            <td >
-              <Button variant="outline-primary" size="sm" style={{marginBottom:"5px"}}>Update</Button>{' '}
-              <Button variant="outline-danger" size="sm">Delete</Button>
-            </td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Microwave</td>
-            <td>Home Appliance</td>
-            <td>120V</td>
-            <td>1100W</td>
-            <td>2022-04-03</td>
-            <td>2022-04-04</td>
-            <td>
-              <Button variant="outline-primary" size="sm" style={{marginBottom:"5px"}}>Update</Button>{' '}
-              <Button variant="outline-danger" size="sm" >Delete</Button>
-            </td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Toaster</td>
-            <td>Home Appliance</td>
-            <td>120V</td>
-            <td>800W</td>
-            <td>2022-04-05</td>
-            <td>2022-04-06</td>
-            <td>
-              <Button variant="outline-primary" size="sm" style={{marginBottom:"5px"}}>Update</Button>{' '}
-              <Button variant="outline-danger" size="sm" >Delete</Button>
-            </td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>Dishwasher</td>
-            <td>Home Appliance</td>
-            <td>120V</td>
-            <td>1400W</td>
-            <td>2022-04-07</td>
-            <td>2022-04-08</td>
-            <td>
-              <Button variant="outline-primary" size="sm" style={{marginBottom:"5px"}}>Update</Button>{' '}
-              <Button variant="outline-danger" size="sm">Delete</Button>
-            </td>
-          </tr>
-        </tbody>
-      </Table>
-    </Container>
+      <div className="d-flex flex-column align-items-center justify-content-center mt-4 text-success">
+        <h1>Welcome To Your Dashboard-<span className='text-dark'>{user.name}</span></h1>
+      </div>
+      <DataTable
+        title="Appliance Data"
+        columns={columns }
+        data={appls}
+        pagination
+        fixedHeader
+        fixedHeaderScrollHeight="450px"
+        selectableRows
+        selectableRowsHighlight
+        highlightOnHover
+        // actions= {<button className='btn btn-outline-danger btn-sm' >Delete</button>}
+      />
+
+      <LocationComponent/>
     </>
-  )
+  );
 }
 
 export default UserHome;

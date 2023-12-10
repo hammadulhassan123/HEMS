@@ -7,11 +7,11 @@ import "../styles/home.css"
 const AboutSection = () => {
   return (
     <section className="about section-padding m-3">
-      <Container className="p-2" style={{ boxShadow: "0px 2px 8px 2px #00000015;",backgroundColor:"black" }} >
+      <Container className="p-2" style={{ boxShadow: "0px 2px 8px 2px #00000015",backgroundColor:"black" }} >
         <Row>
           <Col lg={3} md={12} className="col-12">
             <div className="about-img img-fluid">
-              <Image src="src/assets/Solar on House new.jpg"  alt="A Tall City Building" fluid />
+              <Image src="src/assets/Solar on House new.jpg"  alt="Solar on a house" fluid />
             </div>
           </Col>
           <Col lg={9} md={12} className="col-12 ps-lg-5 mt-md-5">

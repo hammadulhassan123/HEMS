@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import AuthUser from '../AuthUser';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
+import { toast } from 'react-toastify';
 
 export default function SignIn() {
     const navigate = useNavigate();
@@ -18,7 +19,7 @@ export default function SignIn() {
         e.preventDefault();
       // Check if passwords match
       if (password !== confirmPassword) {
-        alert("Passwords do not match!");
+        toast.error("Passwords do not match!");
         return;
       }
         // API call
@@ -42,7 +43,7 @@ export default function SignIn() {
             <Row className="justify-content-center">
                 <Col md={8}>
                     <div className="card p-4">
-                    <div className="section-header justify-content-center text-center mt-5 mb-3" >
+                    <div className="section-header justify-content-center text-center mb-3" >
                       <mark className="teamHead">SignUp <FontAwesomeIcon icon={faUser}/></mark>
                     </div>
                         <Form>
@@ -85,10 +86,11 @@ export default function SignIn() {
                                     onChange={(e) => setConfirmPassword(e.target.value)}
                                 />
                             </Form.Group>
-
-                            <Button variant="outline-primary" type="submit" className="m-3" onClick={submitForm}>
-                              SignUp
-                            </Button>
+                            <div className="card-footer">
+                                <Button variant="outline-primary" type="submit" className="m-3 btn-md" onClick={submitForm}>
+                                SignUp
+                                </Button>
+                            </div>
                         </Form>
                     </div>
                 </Col>
