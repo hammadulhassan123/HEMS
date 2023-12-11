@@ -12,7 +12,7 @@ const Appliances = () => {
   const [consumptionRate, setConsumptionRate] = useState('');
   const [watt, setWatt] = useState('');
   
-  const{http,user}=AuthUser();
+  const{http,user,token}=AuthUser();
   
   const errCheck= ()=>{
     
@@ -40,10 +40,12 @@ const Appliances = () => {
   const MAC = '111.111.111';
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     // const userId = user.user_id;
     // const status='off';
     // const IP = '192.168.12.12';
     // const MAC = '111.111.111';
+
     console.log(userId +" "+ status +" "+ IP +" "+ MAC);
     errCheck();
     try {
@@ -56,7 +58,8 @@ const Appliances = () => {
         IP,
         MAC,
       });
-
+      // userid:user.user_id,
+      
       console.log(response.data);
       // Handle success, e.g., show success message or redirect
     } catch (error) {

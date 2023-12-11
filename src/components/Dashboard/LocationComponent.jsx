@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import AuthUser from '../../AuthUser';
+import "./dashboard.css"
 
 const LocationComponent = () => {
   const [location, setLocation] = useState({ latitude: null, longitude: null });
@@ -24,9 +25,9 @@ const LocationComponent = () => {
     }
   };
 
-    useEffect(() => {
-        getLocation();
-    }, []);
+    // useEffect(() => {
+    //     getLocation();
+    // }, []);
 
   const setterLocation = async () => {
     getLocation();
@@ -70,10 +71,10 @@ const LocationComponent = () => {
 
   return (
     <div>
-      {/* <Button variant='outline-info' onClick={getLocation}>Get Location</Button> */}
+      <Button variant='outline-danger'  className='dashBtn'  onClick={getLocation}>Get Current Location</Button>
       <p>Latitude: {location.latitude}</p>
       <p>Longitude: {location.longitude}</p>
-      <Button variant='outline-info' onClick={setterLocation}>Set Location</Button>
+      <Button variant='outline-primary' className="dashBtn" onClick={setterLocation}>Update Location</Button>
     </div>
   );
 };

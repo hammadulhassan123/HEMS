@@ -7,7 +7,7 @@ import "./styles/home.css"
 export default function Footer() {
   return (
     <>
-        <footer className="footer bg-dark text-light p-4 " style={{ zIndex: 1 }}>
+        <footer className="footer bg-dark text-light p-4 ">
             <Container>
                 <Row>
                 <Col md={4} className="text-uppercase" style={{ fontSize: 'large',fontWeight:"bold" }}>

@@ -189,8 +189,15 @@ video {
 /* .faqMain h4:hover{
     z-index: 0;
 } */
+
 .footer{
-    margin-top: 15rem;
+    margin-top: 50vh;
+    position:sticky;
+    bottom: 0;
+    width: 100%;
+}
+.fEnd{
+    justify-content: flex-end;
 }
 .fEnd a :hover {
     color: #4aab3d;
@@ -201,7 +208,7 @@ video {
 .contactForm{
     position: relative;
     border: 2px solid black;
-    box-shadow: 0px 2px 3px 2px darkslategray;
+    box-shadow: 2px 2px 3px 2px darkslategray;
     padding: 2%;
     background: url("src/assets/Solar installation new.jpg");
     background-position: fixed;
@@ -228,22 +235,35 @@ video {
     }
 }
 
+/* SignIn/SignUp details */
+.signBtn{
+    margin: 0vh 6vw;
+    text-align: center;
+    color: #4aab3d;
+    border-color: #4aab3d;
+    &:hover{
+        background-color: #000;
+        color: white;
+    }
+}
+
+.signCard{
+    border: 2px solid lightslategray;
+    box-shadow: 1px 3px 2px 2px lightslategrey;
+}
+
 .signhead{
     text-overflow: ellipsis;
     display: inline;
     background-color: var(--main-green);
 }
-.signinForm{
+.signinForm,.signupForm{
     position: relative;
     padding: 5%;
     
 }
 
-.signupForm{
-    position: relative;
-    padding: 5%;
-    
-}
+
     /*Sidebar */
 .sideNav{
     display: flex;

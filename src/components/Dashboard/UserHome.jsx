@@ -13,11 +13,38 @@ function UserHome() {
   const getAppliances = async () => {
     try {
       const response = await http.get(`/appliances/${user.user_id}`);
-      console.log(user.user_id);
+      // console.log(user.user_id);
       setAppls(response.data.data);
     } catch (error) {
       console.error(error);
     }
+  };
+
+  const customStyles = {
+    headCells: {
+      style: {
+        color: 'black', // Change font color in header cells
+        fontWeight: 'bold',
+        textTransform:'uppercase',
+        backgroundColor: '#4aab3d', 
+      },
+    },
+    rows: {
+      style: {
+        backgroundColor: '#fedfed', // Change background color of rows
+
+      },
+    },
+    // pagination: {
+    //   style: {
+    //     border: '1px solid green', // Add border to pagination
+    //   },
+    // },
+    table: {
+      style: {
+        border: '3px solid black', // Add border to the entire table
+      },
+    },
   };
 
   const columns =[
@@ -61,19 +88,20 @@ function UserHome() {
         <h1>Welcome To Your Dashboard-<span className='text-dark'>{user.name}</span></h1>
       </div>
       <DataTable
-        title="Appliance Data"
+        title="Appliance Data" 
         columns={columns }
         data={appls}
         pagination
         fixedHeader
         fixedHeaderScrollHeight="450px"
-        selectableRows
-        selectableRowsHighlight
+        //selectableRows
+        // selectableRowsHighlight
         highlightOnHover
+        customStyles={customStyles}
         // actions= {<button className='btn btn-outline-danger btn-sm' >Delete</button>}
       />
 
-      <LocationComponent/>
+      {/* <LocationComponent/> */}
     </>
   );
 }

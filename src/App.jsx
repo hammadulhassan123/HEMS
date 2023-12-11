@@ -9,7 +9,7 @@ import SignIn from './components/SignIn';
 import Navdashboard from "./components/Navdashboard";
 import AuthUser from "./AuthUser";
 import { Route, Routes } from 'react-router-dom';
-import UserHome from './components/Dashboard/userHome';
+import UserHome from './components/Dashboard/UserHome';
 
 function App() {
   const {getToken}= AuthUser();

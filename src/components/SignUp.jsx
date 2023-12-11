@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import { Container, Row, Col, Form, Button, Card } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import AuthUser from '../AuthUser';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -19,7 +19,7 @@ export default function SignIn() {
         e.preventDefault();
       // Check if passwords match
       if (password !== confirmPassword) {
-        toast.error("Passwords do not match!");
+        alert("Passwords do not match!");
         return;
       }
         // API call
@@ -41,58 +41,60 @@ export default function SignIn() {
     return (
         <Container className="pt-5">
             <Row className="justify-content-center">
-                <Col md={8}>
-                    <div className="card p-4">
-                    <div className="section-header justify-content-center text-center mb-3" >
-                      <mark className="teamHead">SignUp <FontAwesomeIcon icon={faUser}/></mark>
-                    </div>
-                        <Form>
-                            <Form.Group className="mb-3" controlId="formName">
-                                <Form.Label>Name:</Form.Label>
-                                <Form.Control
-                                    type="text"
-                                    placeholder="Enter name"
-                                    value={name}
-                                    onChange={(e) => setName(e.target.value)}
-                                />
-                            </Form.Group>
+                <Col md={6}>
+                    <Form onSubmit={submitForm}>
+                        <Card className='signCard'>
+                            <Card.Header className='signhead'>
+                                <div className="justify-content-center text-center text-light p-4" >
+                                <h2>SignUp <FontAwesomeIcon icon={faUser}/></h2>
+                                </div>
+                            </Card.Header>
+                            <Card.Body>
+                                <Form.Group className="mb-3" controlId="formName">
+                                    <Form.Label>Name:</Form.Label>
+                                    <Form.Control
+                                        type="text"
+                                        placeholder="Enter name"
+                                        value={name}
+                                        onChange={(e) => setName(e.target.value)}
+                                    />
+                                </Form.Group>
 
-                            <Form.Group className="mb-3" controlId="formEmail">
-                                <Form.Label>Email address:</Form.Label>
-                                <Form.Control
-                                    type="email"
-                                    placeholder="Enter email"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                />
-                            </Form.Group>
+                                <Form.Group className="mb-3" controlId="formEmail">
+                                    <Form.Label>Email address:</Form.Label>
+                                    <Form.Control
+                                        type="email"
+                                        placeholder="Enter email"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                    />
+                                </Form.Group>
 
-                            <Form.Group className="mb-3" controlId="formPassword">
-                                <Form.Label>Password:</Form.Label>
-                                <Form.Control
-                                    type="password"
-                                    placeholder="Enter password"
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
-                                />
-                            </Form.Group>
+                                <Form.Group className="mb-3" controlId="formPassword">
+                                    <Form.Label>Password:</Form.Label>
+                                    <Form.Control
+                                        type="password"
+                                        placeholder="Enter password"
+                                        value={password}
+                                        onChange={(e) => setPassword(e.target.value)}
+                                    />
+                                </Form.Group>
 
-                            <Form.Group className="mb-3" controlId="formConfirmPassword">
-                                <Form.Label>Confirm Password:</Form.Label>
-                                <Form.Control
-                                    type="password"
-                                    placeholder="Confirm password"
-                                    value={confirmPassword}
-                                    onChange={(e) => setConfirmPassword(e.target.value)}
-                                />
-                            </Form.Group>
-                            <div className="card-footer">
-                                <Button variant="outline-primary" type="submit" className="m-3 btn-md" onClick={submitForm}>
-                                SignUp
-                                </Button>
-                            </div>
-                        </Form>
-                    </div>
+                                <Form.Group className="mb-3" controlId="formConfirmPassword">
+                                    <Form.Label>Confirm Password:</Form.Label>
+                                    <Form.Control
+                                        type="password"
+                                        placeholder="Confirm password"
+                                        value={confirmPassword}
+                                        onChange={(e) => setConfirmPassword(e.target.value)}
+                                    />
+                                </Form.Group>
+                            </Card.Body>
+                            <Card.Footer>
+                                <Button variant="outline-primary" type="submit" className="m-3 btn-md signBtn">SignUp</Button>
+                            </Card.Footer>
+                        </Card>
+                    </Form>
                 </Col>
             </Row>
         </Container>

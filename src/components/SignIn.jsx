@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container,Row, Col,Form, Button} from 'react-bootstrap';
+import { Container,Row, Col,Form, Button, Card} from 'react-bootstrap';
 import AuthUser from '../AuthUser';
 import "../App.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -25,8 +25,8 @@ const SignIn = () => {
   }
 
   const handleSubmit = (event) => {
-    errCheck();
     event.preventDefault();
+    errCheck();
     try{
       http.post('/login', {email:email, password:password}).then((res)=>{
         console.log(res.data);
@@ -56,34 +56,44 @@ const SignIn = () => {
     <>
       <Container className="mt-3">
         <Row className="justify-content-center">
-              <div className="section-header justify-content-center text-center mt-5 mb-3" >
+              {/* <div className="section-header justify-content-center text-center mt-5 mb-3" >
                  <mark className="teamHead">Sign-In to your Account <FontAwesomeIcon icon={faUser}/></mark>
-              </div>
-          <Col md={6} className="signinForm" style={{border:"2px solid black"}} >
+              </div> */}
+          <Col md={6} className="signinForm"  >
             <Form onSubmit={handleSubmit}>
-              <Form.Group controlId="formBasicEmail">
-                <Form.Label>Email address</Form.Label>
-                <Form.Control
-                  type="email"
-                  placeholder="Enter email"
-                  value={email}
-                  onChange={(event) => setEmail(event.target.value)}
-                  />
-              </Form.Group>
+              <Card className='signCard'>
+                <Card.Header className='signhead' >
+                    <div className="section-header justify-content-center text-center text-light p-4" >
+                      <h2>Sign-In to your Account <FontAwesomeIcon icon={faUser}/></h2>
+                    </div>
+                </Card.Header>
+                <Card.Body>
+                    <Form.Group controlId="formBasicEmail">
+                      <Form.Label>Email address</Form.Label>
+                      <Form.Control
+                        type="email"
+                        placeholder="Enter email"
+                        value={email}
+                        onChange={(event) => setEmail(event.target.value)}
+                        />
+                    </Form.Group>
 
-              <Form.Group controlId="formBasicPassword">
-                <Form.Label>Password</Form.Label>
-                <Form.Control
-                  type="password"
-                  placeholder="Enter password"
-                  value={password}
-                  onChange={(event) => setPassword(event.target.value)}
-                />
-              </Form.Group>
-
-              <Button variant="outline-primary" type="submit" className="m-3">
-                Sign In
-              </Button>
+                    <Form.Group controlId="formBasicPassword">
+                      <Form.Label>Password</Form.Label>
+                      <Form.Control
+                        type="password"
+                        placeholder="Enter password"
+                        value={password}
+                        onChange={(event) => setPassword(event.target.value)}
+                      />
+                    </Form.Group>
+                </Card.Body>
+                <Card.Footer>
+                  <Button variant="outline-primary" type="submit" className="m-3 signBtn">
+                    Sign In
+                  </Button>
+                </Card.Footer>
+              </Card>
             </Form>
 
             {errorMessage && (
