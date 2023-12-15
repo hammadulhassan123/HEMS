@@ -5,6 +5,7 @@ import AuthUser from '../AuthUser';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { toast } from 'react-toastify';
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
 export default function SignIn() {
     const navigate = useNavigate();
@@ -14,14 +15,39 @@ export default function SignIn() {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
 
-    const submitForm = (e) => {
-      
-        e.preventDefault();
-      // Check if passwords match
-      if (password !== confirmPassword) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Email regex pattern
+    const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/; // Password regex pattern
+
+    const errCheck = () => {
+        if (email === '' || email === null) {
+        alert('Enter Email');
+        return false;
+        } else if (!emailRegex.test(email)) {
+        alert('Enter a valid Email');
+        return false;
+        }
+        
+        if (password === '' || password === null) {
+        alert('Enter Password');
+        return false;
+        } else if (!passwordRegex.test(password)) {
+        alert('Enter a valid Password (Minimum 8 characters, at least one uppercase letter, one lowercase letter, and one number)');
+        return false;
+        }// Check if passwords match
+        else if (password !== confirmPassword) {
         alert("Passwords do not match!");
-        return;
+        return false;
       }
+        
+        return true;
+    };
+    
+    const submitForm = (e) => {
+        e.preventDefault();
+        if(!errCheck()){
+            alert("Signup Failed");
+            return;
+        }
         // API call
         http.post('/register', {
             email: email,
@@ -91,7 +117,7 @@ export default function SignIn() {
                                 </Form.Group>
                             </Card.Body>
                             <Card.Footer>
-                                <Button variant="outline-primary" type="submit" className="m-3 btn-md signBtn">SignUp</Button>
+                                <Button variant="outline-primary" type="submit" className="m-3 btn-md signBtn">SignUp <FontAwesomeIcon icon={faArrowUpRightFromSquare} /> </Button>
                             </Card.Footer>
                         </Card>
                     </Form>

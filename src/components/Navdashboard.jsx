@@ -8,6 +8,7 @@ import Footer from './Footer'
 import AuthUser from '../AuthUser'
 import UserInfo from './Dashboard/UserInfo'
 import ShowSchedule from './Dashboard/ShowSchedule'
+import "./styles/navbar.css"
 
 export default function Navdashboard() {
 
@@ -29,19 +30,19 @@ export default function Navdashboard() {
 
   return (
     <> 
-        <Navbar className='navbar-custom' expand="lg" bg="white" variant="light" sticky='top' >
+        {/* <Navbar className='navbar-custom' expand="lg" bg="white" variant="light" sticky='top' > */}
+        <Navbar className='navbar-custom ' expand="lg" bg="dark" data-bs-theme="dark" sticky='top' >
             <Container>
               <Navbar.Brand className="nav-brand" >
                   <NavLink to="/userhome" className="active" style={{textDecoration:"none"}}>
-                    <img src="src/assets/hems_logo.png" alt="" className='navbarLogo mb-1' style={{height:"30px",width:"40px", borderRadius:"10px"}}/>
+                    <img src="src/assets/logo new.jpg" alt="" className='navbarLogo mb-1' />
                     {/* <span>HEMS</span> */}
-                    <span className='text-success'>H</span><span className="text-success">E</span><span className="text-dark">MS</span>
+                    {/* <span className='text-success'>H</span><span className="text-success">E</span><span className="text-light">MS</span> */}
                   </NavLink>
               </Navbar.Brand>
               <Navbar.Toggle aria-controls="navbarSupportedContent" />
               <Navbar.Collapse id="navbarSupportedContent">
                   <Nav className="ms-auto mb-2 mb-lg-0 ">
-                  {/* <NavLink to='/' className='anchor p-2'>Home</NavLink> */}
                   <NavLink to='/userhome' className='anchor p-2'>DashBoard</NavLink>
                   <NavLink to='/addAppliances' className='anchor p-2'>Add Appliances</NavLink>
                   <NavLink to='/showscheduling' className='anchor p-2'>Scheduling</NavLink>

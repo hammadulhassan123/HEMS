@@ -1,5 +1,6 @@
 :root{
     --main-green: #2aab3d;
+    /* --main-green: #304D30; */
     --other-green: #28a745;
     --hero-grey:#4444443f;
     --hero-dark: #00000067;
@@ -30,11 +31,23 @@
 }
 
 .dashBtn{
-    color:black;
-    background-color: #4aab3d;
+    background-color: var(--main-green);
+    border-radius: 8px;
+    box-shadow: 0px 3px 2px 3px var(--hero-grey);
+    color: white;
     &:hover{
         color: white;
-        border-color: #4aab3d;
+        border-color: var(--main-green);
         background-color: #000;
     }
 }
+
+.secondBtn{
+    border-radius: 8px;
+    box-shadow: 0px 3px 2px 3px var(--hero-grey);
+    &:hover{
+        color: white;
+        background-color: #000;
+    }
+}
+

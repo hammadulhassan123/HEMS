@@ -3,68 +3,85 @@ import { Form, Button, Container, Row, Col, Card } from 'react-bootstrap';
 import './dashboard.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlug } from '@fortawesome/free-solid-svg-icons';
-import axios from 'axios';
-import { toast } from 'react-toastify';
 import AuthUser from '../../AuthUser';
+import { useNavigate } from 'react-router-dom';
 
 const Appliances = () => {
   const [name, setName] = useState('');
   const [consumptionRate, setConsumptionRate] = useState('');
   const [watt, setWatt] = useState('');
+
+  const{http,user}=AuthUser();
   
-  const{http,user,token}=AuthUser();
+  const navigate=useNavigate();
   
+
   const errCheck= ()=>{
-    
+    // Validate appliance name
     if(name == null || name == ''){
       console.log("Enter the Appliance name");
       alert("Enter the Appliance name");
+      return false;
     }
-
     // Validate consumption rate
     if(consumptionRate <1 || consumptionRate > 1440){
-      console.log("Consumption rate should be between 1 and 1440 mins")
-      alert("Consumption rate should be between 1 and 1440 mins")
+      console.log("Consumption rate should be between 1 and 1440 mins");
+      alert("Consumption rate should be between 1 and 1440 mins");
+      return false;
     }
     
     // Validates wattage of appliance
     if (watt < 1 || watt > 3500) {
       console.log('Watt should be between 1 and 3500.');
       alert("Watt should be between 1 and 3500");
+      return false;
     }
-    return;
+    // Validate consumption rate is multiple of 15
+    if (consumptionRate % 15 != 0 )
+    {
+      console.log('Consumption Rate should be a multiple of 15');
+      alert('Consumption Rate should be a multiple of 15');
+      return false;
+    }
+    return true;
   }
+
+  
   const userId = user.user_id;
   const status='off';
   const IP = '192.168.12.12';
   const MAC = '111.111.111';
+  
+  
+  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // const userId = user.user_id;
-    // const status='off';
-    // const IP = '192.168.12.12';
-    // const MAC = '111.111.111';
-
-    console.log(userId +" "+ status +" "+ IP +" "+ MAC);
-    errCheck();
-    try {
-      const response = await http.post('/appliances', {
-        name,
-        rate: consumptionRate,
-        watt,
-        userId,
-        status,
-        IP,
-        MAC,
-      });
-      // userid:user.user_id,
-      
-      console.log(response.data);
-      // Handle success, e.g., show success message or redirect
-    } catch (error) {
-      console.error('Error:', error);
-      // Handle error, e.g., show error message
+    if(errCheck()){
+      console.log(userId + ' ' + status + ' ' + IP + ' ' + MAC);
+      try {
+        const response = await http.post('/appliance', {
+          a_name: name,
+          a_consumption: consumptionRate,
+          a_watt: watt,
+          user_id:userId,
+          a_status: status,
+          a_IP: IP,
+          a_MAC: MAC,
+        });
+        // userId,
+        
+        console.log(response.data);
+        // Handle success, e.g., show success message or redirect
+        alert("Appliance added successfully");
+        navigate('/userhome')
+      } catch (error) {
+        // Handle error, e.g., show error message
+        console.error('Error:', error);
+      }
+    }
+    else{
+      console.log("Process Unsuccessfull")
     }
   };
 

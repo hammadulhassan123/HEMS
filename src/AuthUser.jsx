@@ -45,6 +45,7 @@ export default function AuthUser() {
         headers:{
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
+            redirect:"follow",
         }
     });
     

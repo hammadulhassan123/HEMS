@@ -1,25 +1,37 @@
-.navbar-custom{
-    box-shadow: 0px 1px 1px 2px #28a745;
+:root{
+    --main-green: #2aab3d;
+    /* --main-green: #304D30; */
+    --other-green: #28a745;
+    --hero-grey:#4444443f;
+    --hero-dark: #00000067;
     
 }
 
+.navbar-custom{
+    box-shadow: 0px 1px 1px 2px #28a745;
+}
+
 .nav-brand{
-    color: #4aab3d;
+    color: var(--main-green);
     font-size: 25px;
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 2px;
+    position: relative;
 }
 
-
+.navbar-brand .navbarLogo{
+    max-height: 60px;
+    width: auto;
+}
 .anchor{
     font-size: 15px;
     text-transform: uppercase;
     font-weight: 500;
     text-decoration: none;
-    color: #444343;
+    color: white;
 }
 .navbar-custom .anchor:focus,.navbar-custom .anchor:hover{
-    color: #4aab3d;
+    color: var(--main-green);
     font-weight: bolder;
 }

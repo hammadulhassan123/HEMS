@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Col, Container, Row } from 'react-bootstrap';
 import AuthUser from '../../AuthUser';
 import "./dashboard.css"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLocationArrow, faLocationCrosshairs } from '@fortawesome/free-solid-svg-icons';
 
 const LocationComponent = () => {
   const [location, setLocation] = useState({ latitude: null, longitude: null });
@@ -70,12 +72,19 @@ const LocationComponent = () => {
   
 
   return (
-    <div>
-      <Button variant='outline-danger'  className='dashBtn'  onClick={getLocation}>Get Current Location</Button>
-      <p>Latitude: {location.latitude}</p>
-      <p>Longitude: {location.longitude}</p>
-      <Button variant='outline-primary' className="dashBtn" onClick={setterLocation}>Update Location</Button>
-    </div>
+    <Container className='m-2'>
+      <Row>
+        <Col md={8} >
+            <div>
+              <Button variant='outline-primary' className='secondBtn' onClick={getLocation}>Get Current Location  <FontAwesomeIcon icon={faLocationCrosshairs} /> </Button>
+              <p>Latitude: {location.latitude}</p>
+              <p>Longitude: {location.longitude}</p>
+              <Button variant='outline-primary ' className="secondBtn" onClick={setterLocation}>Update Location <FontAwesomeIcon icon={faLocationArrow} /> </Button>
+            </div>
+        </Col>
+      </Row>
+
+    </Container>
   );
 };
 

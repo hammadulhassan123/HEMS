@@ -10,9 +10,10 @@ import ContactUs from './ContactUs';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
 import Page404 from './Page404';
-import UserHome from './Dashboard/userHome';
 import Footer from './Footer';
 import AuthUser from '../AuthUser';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRightToBracket, faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
 class NavBar extends Component {
   render() {
@@ -28,13 +29,13 @@ class NavBar extends Component {
     return (
         <>
             {/* Navbar is here */}
-            <Navbar className='navbar-custom' expand="lg" bg="white" variant="light" sticky='top' >
+            <Navbar className='navbar-custom' expand="lg" bg="dark" variant="dark" sticky='top' >
             <Container>
             <Navbar.Brand className="nav-brand" >
                 <NavLink to="/" className="active" style={{textDecoration:"none"}}>
                   <img src="src/assets/hems_logo.png" alt="" className='navbarLogo mb-1' style={{height:"30px",width:"40px", borderRadius:"10px"}}/>
                   {/* <span>HEMS</span> */}
-                  <span className='text-success'>H</span><span className="text-success">E</span><span className="text-dark">MS</span>
+                  <span className='text-success'>H</span><span className="text-success">E</span><span className="text-light">MS</span>
                 </NavLink>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarSupportedContent" />
@@ -43,8 +44,8 @@ class NavBar extends Component {
                 <NavLink to="/" className='anchor p-2 active'>Home</NavLink>
                 <NavLink to="/about" className='anchor p-2'>About</NavLink>
                 <NavLink to="/contact" className='anchor p-2'>Contact</NavLink>
-                <NavLink to="/signin" className='anchor p-2'>Sign-In</NavLink>
-                <NavLink to="/signup" className='anchor p-2'>Sign-Up</NavLink>
+                <NavLink to="/signin" className='anchor p-2'>Sign-In <FontAwesomeIcon icon={faArrowRightToBracket} /> </NavLink>
+                <NavLink to="/signup" className='anchor p-2'>Sign-Up <FontAwesomeIcon icon={faArrowUpRightFromSquare} /> </NavLink>
                 {/* <NavLink to='/userhome' className='anchor p-2'>DashBoard</NavLink>
                 <NavLink to='/appliances' className='anchor p-2'>Appliances</NavLink> */}
                 

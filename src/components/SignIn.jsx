@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons';
 
 const SignIn = () => {
   // const navigate = useNavigate();
@@ -13,20 +14,31 @@ const SignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
- 
-  const errCheck=()=>{
-    if(email=="" ||email==null){
-      alert("Enter Email");
+  
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Email regex pattern
+
+  const errCheck = () => {
+    if (email === '' || email === null) {
+      alert('Enter Email');
+      return false;
+    } else if (!emailRegex.test(email)) {
+      alert('Enter a valid Email');
+      return false;
     }
-    if(password=="" || password == null){
-      alert("Enter Password");
-    }
-    return;
-  }
+    
+    if (password === '' || password === null) {
+      alert('Enter Password');
+      return false;
+    } 
+    
+    return true;
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    errCheck();
+    if(!errCheck()){
+      return;
+    };
     try{
       http.post('/login', {email:email, password:password}).then((res)=>{
         console.log(res.data);
@@ -36,16 +48,22 @@ const SignIn = () => {
           const { token, ...userData } = data;
           // Storing token and user details in localStorage
           setToken(userData, token);
-          toast.success(message);
+          toast.success(message,{
+            position:toast.POSITION.TOP_RIGHT
+          });
         } else {
-          toast.error(message);
+          toast.warning(message,{
+            position:toast.POSITION.TOP_RIGHT
+          });
           setErrorMessage('Login Failed');
         }
         // toast.success("Login Success");
       })
     }catch(error){
       console.error('Error:', error);
-      toast.err("Login Failed")
+      toast.warning("Login Failed",{
+        position: toast.POSITION.TOP_RIGHT
+      });
       setErrorMessage('An error occurred. Please try again.');
     }
   
@@ -56,9 +74,7 @@ const SignIn = () => {
     <>
       <Container className="mt-3">
         <Row className="justify-content-center">
-              {/* <div className="section-header justify-content-center text-center mt-5 mb-3" >
-                 <mark className="teamHead">Sign-In to your Account <FontAwesomeIcon icon={faUser}/></mark>
-              </div> */}
+              
           <Col md={6} className="signinForm"  >
             <Form onSubmit={handleSubmit}>
               <Card className='signCard'>
@@ -90,7 +106,7 @@ const SignIn = () => {
                 </Card.Body>
                 <Card.Footer>
                   <Button variant="outline-primary" type="submit" className="m-3 signBtn">
-                    Sign In
+                    Sign In <FontAwesomeIcon icon={faArrowRightToBracket} />
                   </Button>
                 </Card.Footer>
               </Card>

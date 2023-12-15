@@ -1,9 +1,12 @@
 *{
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 /* Define a CSS variable for the background color */
 :root {
     --main-green: #4aab3d; /* Default background color */
+    --second-green: #28a754
   }
 .main {
     position: relative;
@@ -46,13 +49,13 @@ video {
     border-radius: 40px;
     background-color: transparent;   
     border-color: var(--main-green);
-    color: #4aab3d;
+    color: var(--main-green);
 }
 .about{
     color: white;
 }
 .about-head{
-    background-color: #4aab3d;
+    background-color: var(--main-green);
     text-align: justify;
     border-radius: 4rem 0;
 }
@@ -89,7 +92,7 @@ video {
 .servhome:hover{
     color: darkslategray;
     background-color: rgba(0, 0, 0, 0.314);
-    border-color: #28a754;
+    border-color: var(--second-green);
     border-radius: 0px 4rem;
     .servImg{
         opacity: 0.6;
@@ -111,7 +114,7 @@ video {
 
 .teamHead{
     position: relative;
-    background: #4aab3d;
+    background: var(--main-green);
     font-weight:bold; 
     font-size:35px; 
     color:white;
@@ -179,8 +182,9 @@ video {
     z-index: 0;
 }
 
-.faqHead h2{
+.faqHead b{
     color: var(--main-green);
+    text-transform: capitalize;
 }
 .faq:hover{
     /* color: #000; */
@@ -195,12 +199,16 @@ video {
     position:sticky;
     bottom: 0;
     width: 100%;
+    z-index: 3;
+}
+.footer p{
+    font-size: 15px;
 }
 .fEnd{
     justify-content: flex-end;
 }
 .fEnd a :hover {
-    color: #4aab3d;
+    color: var(--main-green);
 }
 
 
@@ -227,8 +235,8 @@ video {
 .contactBtn{
     margin: 0vh 6vw;
     text-align: center;
-    color: #4aab3d;
-    border-color: #4aab3d;
+    color: var(--main-green);
+    border-color: var(--main-green);
     &:hover{
         background-color: #000;
         color: white;
@@ -239,8 +247,8 @@ video {
 .signBtn{
     margin: 0vh 6vw;
     text-align: center;
-    color: #4aab3d;
-    border-color: #4aab3d;
+    color: var(--main-green);
+    border-color: var(--main-green);
     &:hover{
         background-color: #000;
         color: white;
@@ -284,9 +292,9 @@ video {
 #menuToggle{
     margin-left: 10px;
     color:black;
-    background-color: #4aab3d;
+    background-color: var(--main-green);
     &:hover{
-        color: #4aab3d;
+        color: var(--main-green);
         border-color: white;
         background-color: #000;
     }
@@ -313,7 +321,7 @@ video {
     background-color: black;
     border-radius: 5px;
     & a{
-        color: #4aab3d;
+        color: var(--main-green);
     }
 }
 
