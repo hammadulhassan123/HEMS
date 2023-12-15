@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { toast } from 'react-toastify';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import "./styles/home.css"
 
 export default function SignIn() {
     const navigate = useNavigate();
@@ -67,11 +68,11 @@ export default function SignIn() {
     return (
         <Container className="pt-5">
             <Row className="justify-content-center">
-                <Col md={6}>
+                <Col md={4}>
                     <Form onSubmit={submitForm}>
                         <Card className='signCard'>
                             <Card.Header className='signhead'>
-                                <div className="justify-content-center text-center text-light p-4" >
+                                <div className="justify-content-center text-center text-light p-2" >
                                 <h2>SignUp <FontAwesomeIcon icon={faUser}/></h2>
                                 </div>
                             </Card.Header>

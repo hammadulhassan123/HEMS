@@ -114,7 +114,8 @@ function UserHome() {
         justifyContent: 'center', 
         // backgroundColor: '#7393b3', 
         // backgroundColor: '#708090', 
-        backgroundColor: '#4aab3d',
+        // backgroundColor: '#4aab3d',
+        backgroundColor: '#1b4332',
         border: '1px solid black', // Add border between header cells
       },
     },

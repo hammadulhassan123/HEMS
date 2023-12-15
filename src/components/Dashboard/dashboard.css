@@ -1,6 +1,7 @@
 :root{
     --main-green: #2aab3d;
-    /* --main-green: #304D30; */
+    --new1-green: #1b4332;
+    --new2-green: #304D30;
     --other-green: #28a745;
     --hero-grey:#4444443f;
     --hero-dark: #00000067;
@@ -8,7 +9,7 @@
 }
 
 .appForm{
-    border: 2px solid var(--other-green);
+    border: 2px solid #1b4332;
     box-sizing: border-box;
     border-radius: 0px 4rem;
     box-shadow: 0px 2px 3px 2px darkslategray;
@@ -24,7 +25,7 @@
 }
 
 .appForm .label{
-    color: var(--main-green);
+    color: #1b4332;
     font-weight: bolder;
     font-size: larger;
     font-family:Georgia, 'Times New Roman', Times, serif ;

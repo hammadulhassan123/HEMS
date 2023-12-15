@@ -75,7 +75,7 @@ const ShowScheduling=()=>{
           console.log('Schedule generated:', response.data);
           alert('Schedule generated:', response.data);
           // Further actions like displaying a success message, updating state, etc.
-          showSchd();
+          ShowScheduling();
         } else {
           alert('Insufficient user and/or appliance data to generate schedule.');
           // Handle the case where conditions are not met
@@ -120,7 +120,8 @@ const ShowScheduling=()=>{
           justifyContent: 'center', 
           // backgroundColor: '#7393b3', 
           // backgroundColor: '#708090', 
-          backgroundColor: '#4aab3d',
+          // backgroundColor: '#4aab3d',
+          backgroundColor: '#1b4332',
           border: '1px solid black', // Add border between header cells
         },
       },

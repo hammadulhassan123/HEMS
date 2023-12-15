@@ -32,12 +32,12 @@ class NavBar extends Component {
             <Navbar className='navbar-custom' expand="lg" bg="dark" variant="dark" sticky='top' >
             <Container>
             <Navbar.Brand className="nav-brand" >
-                <NavLink to="/" className="active" style={{textDecoration:"none"}}>
-                  <img src="src/assets/hems_logo.png" alt="" className='navbarLogo mb-1' style={{height:"30px",width:"40px", borderRadius:"10px"}}/>
-                  {/* <span>HEMS</span> */}
-                  <span className='text-success'>H</span><span className="text-success">E</span><span className="text-light">MS</span>
-                </NavLink>
-            </Navbar.Brand>
+                  <NavLink to="/userhome" className="active" style={{textDecoration:"none"}}>
+                    <img src="src/assets/logo new.jpg" alt="" className='navbarLogo mb-1' />
+                    {/* <span>HEMS</span> */}
+                    {/* <span className='text-success'>H</span><span className="text-success">E</span><span className="text-light">MS</span> */}
+                  </NavLink>
+              </Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarSupportedContent" />
             <Navbar.Collapse id="navbarSupportedContent">
                 <Nav className="ms-auto mb-2 mb-lg-0 ">

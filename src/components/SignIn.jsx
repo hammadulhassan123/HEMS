@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Container,Row, Col,Form, Button, Card} from 'react-bootstrap';
 import AuthUser from '../AuthUser';
-import "../App.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons';
+import "./styles/home.css"
 
 const SignIn = () => {
   // const navigate = useNavigate();

@@ -35,14 +35,14 @@ export default function Teamcard() {
     
     <>
       <Container>
-          <Row className='team-head mt-5 mb-2'>
-                 <Col md={12} className='text-center text-dark' >
+          <Row className='team-head justify-content-center mt-5 mb-2'>
+                 <Col md={6} className='text-center text-dark' >
                         <mark className='teamHead'>Our Team <FontAwesomeIcon icon={faPeopleGroup} color='black' fade/></mark>
                 </Col>
             </Row>
             <Row>
               { teamMembers.map((member)=>(
-                <Col key={member.name} md={12} lg={6} className='mt-2'>
+                <Col key={member.name} md={3} className='mt-2'>
                     <Card className='cardTeam text-center' >
                        <Card.Body>
                           <Image src={member.image} alt={member.name} className='text-center cardTImg'/>
