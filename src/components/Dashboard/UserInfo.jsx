@@ -56,7 +56,7 @@ function UserInfo() {
 
     try {
       // Assuming you have an API endpoint for updating user details
-      const response = await http.put(`/users/${user.user_id}`, userData); // Replace with your actual API endpoint
+      const response = await http.put(`/user/${user.user_id}`, userData); // Replace with your actual API endpoint
 
       if (response.status === 200) {
         alert('User details updated successfully!');

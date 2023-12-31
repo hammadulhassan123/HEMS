@@ -25,10 +25,10 @@
 }
 
 .appForm .label{
-    color: #1b4332;
+    color: lightyellow;
     font-weight: bolder;
     font-size: larger;
-    font-family:Georgia, 'Times New Roman', Times, serif ;
+    font-family:'Times New Roman', Times, serif ;
 }
 
 .dashBtn{

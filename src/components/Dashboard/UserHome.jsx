@@ -12,12 +12,24 @@ function UserHome() {
   const [appls, setAppls] = useState([]);
   const [selectedAppliance, setSelectedAppliance] = useState(null);
   const [showModal, setShowModal] = useState(false);
-
+  const [userData, setUserData] = useState(null);
   const navigate = useNavigate();
-  const getAppliances = async (e) => {
-    
-    // console.log(user);
+
+  const getUserInfo = () => {
     try {
+      http.get(`/users/${user.user_id}`).then((res) => {
+        // console.log(res.data.data);
+        setUserData(res.data.data);
+      });
+    } catch (error) {
+      alert(error);
+    }
+  };
+
+
+  const getAppliances = async (e) => {  
+    try {
+      getUserInfo();
       const response = await http.get(`/appliance/${user.user_id}`);
       // console.log(response.data.data);
       setAppls(response.data.data);
@@ -148,6 +160,11 @@ function UserHome() {
     
   const columns =[
     {
+      name: "Appliance Id",
+      selector: (row) => row.id,
+      sortable: true,
+    },
+    {
       name: "Appliance Name",
       selector: (row) => row.a_name,
       sortable: true,
@@ -179,14 +196,10 @@ function UserHome() {
     
   ]
 
-  useEffect(()=>{
-    getAppliances();
-  },[])
-
   return (
     <>
       <div className="d-flex flex-column align-items-center justify-content-center mt-4 text-success">
-        <h1>Welcome To Your Dashboard-<span className='text-dark'>{user.name}</span></h1>
+        <h1>Welcome To Your Dashboard-<span className='text-dark'>{userData?.name}</span></h1>
       </div>
       <Container>
         <Row>

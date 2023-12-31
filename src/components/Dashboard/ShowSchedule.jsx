@@ -21,7 +21,7 @@ function ShowSchedule() {
     
       try {
         const response = await http.get(`/appliance/${user.user_id}`);
-        console.log(response.data.data);
+        // console.log(response.data.data);
         setAppls(response.data.data);
       } catch (error) {
         console.error(error);
@@ -31,7 +31,7 @@ function ShowSchedule() {
     const getUserInfo=()=>{
       try {
         http.get(`/users/${user.user_id}`).then((res) => {
-          console.log(res.data.data);
+          // console.log(res.data.data);
           setUserData(res.data.data);
         });
       } catch (error) {
@@ -42,7 +42,7 @@ function ShowSchedule() {
 
 const ShowScheduling=()=>{
         try{
-            http.get(`/schedulings/${user.user_id}`).then((res)=>{
+            http.get(`/schedulings`).then((res)=>{
                 console.log(res.data.data);
                 setShowSchd(res.data.data);
             }).catch((error) => {
@@ -66,25 +66,25 @@ const ShowScheduling=()=>{
         }
     }
 
+    const generateSchedule = async () => {
+         try {
+           if (userdata?.longitude && userdata?.latitude && userdata?.solar_capacity) {
+             // Proceed with generating schedule using the provided parameters
+             const response = await http.get(`/showUserAppliancesX/${user.user_id}`);
+             console.log('Schedule generated:', response.data);
+             alert('Schedule generated:', response.data);
+             // Further actions like displaying a success message, updating state, etc.
+             ShowScheduling();
+           } else {
+             alert('Insufficient user and/or appliance data to generate schedule.');
+             // Handle the case where conditions are not met
+           }
+         } catch (error) {
+           console.error('Error generating schedule:', error);
+           // Handle errors or display alerts as needed
+         }
+       };
 
- const generateSchedule = async () => {
-      try {
-        if (userdata?.longitude && userdata?.latitude && userdata?.solar_capacity) {
-          // Proceed with generating schedule using the provided parameters
-          const response = await http.get(`/showUserAppliancesX/${user.user_id}`);
-          console.log('Schedule generated:', response.data);
-          alert('Schedule generated:', response.data);
-          // Further actions like displaying a success message, updating state, etc.
-          ShowScheduling();
-        } else {
-          alert('Insufficient user and/or appliance data to generate schedule.');
-          // Handle the case where conditions are not met
-        }
-      } catch (error) {
-        console.error('Error generating schedule:', error);
-        // Handle errors or display alerts as needed
-      }
-    };
     
 
 
